@@ -1,0 +1,249 @@
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+
+% Si si realizza un documento in pi� lingue bisogna istruire babel con
+% [lingua_secondaria,lingua_principale]
+
+%\addto\captionsitalian{\renewcommand{\chaptername}{Esercitazione}}
+% Per cambiare la voce classica "Capitolo" in "Esercitazione" generata da Babel
+
+\usepackage{eurosym}
+% Per abilitare il simbolo dell'euro con il comando \euro
+
+%\usepackage{makeidx}
+%\makeindex
+% Per generare l'indice analico TRALASCIATO PERCH� TROPPO ONEROSO
+
+%\usepackage{glossary}
+%\makeglossary
+% Lo avevo usato nella tesi originale per il glossario
+% ma � stato abbandonato e non funziona pi�
+
+\usepackage[acronym]{glossaries}
+\makeglossaries
+% Per generare il glossario e l'indice dei simboli
+
+\usepackage[square,sort]{natbib}
+% Per generare la bibliografia Autore e Nome
+
+%\usepackage[resetlabels]{multibib}
+%\newcites{web}{Siti Web consultati}
+% Per creare la sitografia MA TRALASCIATO
+
+%
+% MATEMATICA
+%
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+% Per ottimizzare e migliorare la scrittura matematica
+\numberwithin{equation}{section}
+% Per legare la numerazione delle formule alle rispettive sezioni
+%\usepackage{split}
+% Per spezzare le formule con allineamento
+\usepackage{numprint}
+% Per poter scrivere i numeri con la spaziatura ogni 3 cifre \np{1000} --> 1 000
+\usepackage{mathcomp}
+\usepackage{gensymb}
+% Per poter usare \numprint[\textcelsius]{20} --> 20�C 
+\newcommand{\ud}{\mathop{}\ \mathrm{d}}
+% Per poter scrivere \ud x --> dx
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+% Per definire il comando valore assoluto "\abs"
+% bisogna caricare il pacchetto mathtools
+
+%
+% IMMAGINI
+%
+\usepackage{graphicx}
+% CARTELLE CONTENENTI LE IMMAGINI MAX QUALIT�
+\graphicspath{{frontmatter/figure/},{capitolo1/figure/},{capitolo2/figure/},{capitolo3/figure/},{capitolo4/figure/},{capitolo5/figure/},{capitolo6/figure/},{capitolo7/figure/},{capitolo8/figure/},{capitolo9/figure/}}
+% Per caricare e gestire le immagini
+% N.B. � preferibile usare immagini in pdf e eps per poter 
+% poi compilare sia con latex sia con pdflatex
+% ALTERNATIVAMENTE BASSA QUALIT�
+%\graphicspath{{immagini_x_riduzione/}}
+% Per ridurre le dimensioni complessive dell'elaborato finale
+
+\usepackage{enumerate}
+% Per poter aggiungere elenchi numerati con lettere o numeri romani
+% \begin{enumerate}[a.]
+
+\usepackage{wrapfig}
+% Pacchetto per avvolgere un oggetto all'interno del testo
+% (+ capoversi separati da righe bianche)
+%
+% Si usa in questo modo:
+% \begin{wrapfloat}{oggetto}{posizionamento}{larghezza}
+% oggetto pu� essere figure o table
+% posizionamento: 	r,R lato destro del testo (l,L lato sinistro)
+%					i,I il margine interno (o,O esterno)
+% larghezza se posta 0pt fa fede l'argomento dello larghezza espresso nell'oggetto
+
+
+% PER MIGLIORARE I FONT
+\usepackage{mathpazo}
+\usepackage[scaled=.95]{helvet}
+\usepackage{courier}
+
+% IMPAGINAZIONE MANUALE DELLA PAGINA
+\usepackage[a4paper,top=3.0cm,bottom=2.5cm,left=2.0cm,right=2.0cm,%
+bindingoffset=15mm,marginpar=1.5cm,reversemp]{geometry}
+
+\usepackage{chngpage}
+% Per modificare una singola pagina
+
+\usepackage{eso-pic}
+% pacchetto per massimizzare il logo sulla pagina frontespizio
+
+\newcommand \AlCentroPagina [1]{ %
+\AddToShipoutPicture *{\AtPageCenter {%
+%\makebox (0 ,0){\includegraphics %
+\makebox (0 ,100){\includegraphics %
+%[ width =0.8\paperwidth ]{#1}}}}}
+[ width =0.6\paperwidth ]{#1}}}}}
+% descrizione di un nuovo comando per centrare e massimizzare l'immagine
+
+\newenvironment{citazione}
+	{\begin{quotation}\footnotesize}
+	{\end{quotation}}
+% descrizione di un nuovo ambiente per le citazioni fuori corpo
+
+\newenvironment{legge}
+	{\begin{quote} \begin{itshape}}
+	{\end{itshape} \end{quote}}
+% descrizione di un nuovo ambiente per citare le leggi
+
+\makeatletter
+\def\cleardoublepage{\clearpage
+\if@twoside
+\ifodd\c@page
+\else
+\null\thispagestyle{empty}\clearpage
+\fi
+\fi}
+\makeatother
+% Per avere pagine completamente bianche se � attivo openright
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+% STILE USATO PER LE ESERCITAZIONI
+%\fancyhead[LO,RE]{\slshape \rightmark}
+%\fancyhead[LE,RO]{\bfseries \leftmark}
+%\fancyfoot[LE,RO]{\bfseries \thepage}
+%\fancyfoot[CE,CO]{}
+%\fancyfoot[LO,RE]{\slshape Nicola Rainiero, 421449/ICG}
+%\renewcommand{\footrulewidth}{0.4pt}
+% STILE PER LA TESI
+\fancyhead[LE,RO]{\bfseries \thepage}
+\fancyhead[LO]{\slshape \rightmark}
+\fancyhead[RE]{\bfseries \leftmark}
+\fancyfoot[CE,CO]{}
+\renewcommand{\footrulewidth}{0.0pt}
+% PARTE COMUNE
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter\ $\:-\:$ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\S \thesection\ $\,-\,$ #1}}
+% pacchetto fancy per avere uno stile di pagina pi� raffinato
+% Nuovo stile di pagina
+
+\newenvironment{abstract} %
+{%\cleardoublepage %\fncyblank 
+			\null \vfill \begin{center} %
+\bfseries \abstractname \end{center}} %
+{\vfill \null }
+% Per definire l'ambiente abstract che non esiste nella classe BOOK
+
+\usepackage[Sonny]{fncychap}
+% Modifica dello stile di default per i capitoli in prima pagina
+% Altri stili di capitolo sono i seguenti:
+% Lenny, Rejne, Conny, PetersLenny, Bjornstrup, Glenn, Bjarne, Sonny,Nicola
+
+\usepackage[italian]{varioref}
+% Per migliorare i riferimenti, al posto di \ref va \vref e per le equazioni \eqref
+
+\usepackage{indentfirst}
+% Per identare anche il primo paragrafro sotto i titoli delle sezioni
+
+\linespread{1.0}
+% interlinea, mettere 1 per singola da usarsi per le bozze!!!
+
+\usepackage{microtype}
+% Migliora il riempimento delle righe
+
+\frenchspacing
+% non inserisce dopo un punto pi� spazio di quanto sia inserito
+% dopo ogni normale carattere
+
+%
+% TABELLE
+%
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage[font=small,format=hang,labelfont={sf,bf}]{caption}
+\captionsetup[table]{position=top}
+% per migliorare la leggibilit� delle tabelle
+\usepackage{colortbl}
+\newcolumntype{G}{>{\columncolor[gray]{0.8}}c}
+% Per colorare di grigio le colonne delle tabelle
+%\usepackage[table]{xcolor}
+\usepackage{xcolor} 
+% Per evitare l'errore LaTeX Error: Option clash for package xcolor
+% Ho aggiunto \documentclass[a4paper,11pt,twoside,openright,reqno,table]{book} e tolto table da sopra
+% Per colorare di grigio le righe delle tabelle
+\usepackage{rotating}
+% Per poter ruotare le tabelle
+\usepackage{multirow}
+% Per poter avere celle su pi� righe
+\usepackage{tabularx}
+% Per poter avere tabelle con la giustificazione
+
+\usepackage{tikz}
+% Il pacchetto per i grafici in ps ed in pdf
+\usetikzlibrary{arrows}
+\usetikzlibrary{snakes}
+\usetikzlibrary{backgrounds}
+%\usepackage{pgflibraryarrows}
+%\usepackage{pgflibrarysnakes}
+% opzionali per tikz
+
+\usepackage{comment}
+% per poter gestire commenti pi� lunghi
+% Inserire qui le info per il PDF esportato
+\usepackage[colorlinks,hyperindex,pagebackref]{hyperref}
+\hypersetup{
+			pdftitle={Title},
+			pdfsubject={University},
+			pdfauthor={Author},
+			pdfkeywords={keyword1, keyword2, keyword3},
+			%pdfpagemode=FullScreen, % avvia a pieno schermo
+			citecolor=black,
+			filecolor=black,
+			linkcolor=black,
+			urlcolor=black
+}
+% Per trasformare i riferimenti in link cliccabili
+% Funziona solo compilando con pdflatex
+
+\usepackage[hyperpageref]{backref}
+\renewcommand{\backref}[1]{}
+\renewcommand*{\backreftwosep}{ e~}
+\renewcommand*{\backreflastsep}{ e~}
+\renewcommand*{\backrefalt}[4]{%
+   \ifcase #1 %
+      \relax%
+   \or
+      (Citato a pagina~#2)%
+   \else
+      (Citato alle pagine~#2)
+   \fi}
+% Per evidenziare la/le pagina/e dove sono citati 
+
+% \usepackage{subfigure} % pi� vecchio usa subfloat per tutto!!
+\usepackage{subfig} % pi� recente e dello stesso autore ma non va con le tabelle!
+% Va sempre posto alla fine del preambolo
+% serve per poter mettere pi� immagini appaiate

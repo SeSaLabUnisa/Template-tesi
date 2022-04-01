@@ -3,6 +3,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[a4paper,11pt,oneside,top=3cm,bottom=3cm,left=3.5cm,right=3.5cm,openright,reqno,table]{book}
 
+
+
 % openany - fa iniziare i capitoli direttamente nella pagina successiva
 % openright - fa iniziare i capitoli nella prima pagina destra disponibile 
 % fleqn  - allinea le formule a sinistra anzichè centrarle
@@ -10,6 +12,13 @@
 % reqno - dispone la numerazione delle formule sulla destra
 %
 \usepackage{packages}
+\usepackage{minted}
+\usepackage{url}
+
+\usepackage{xcolor} % to access the named colour LightGray
+\definecolor{LightGray}{gray}{0.9}
+
+%\usepackage{natbib}
 % Per non appesantire troppo questo file
 % quasi tutti i pacchetti usati sono salvati in packages.sty
 %
@@ -69,9 +78,14 @@
 \include{capitoli/introduzione}
 \include{capitoli/stato_arte}
 \include{capitoli/design}
+\include{capitoli/esempio_latex}
 \include{capitoli/conclusioni}
 %\part{Impatto ambientale}
 
 \backmatter
 \include{backmatter/ringraziamenti}
+
+\bibliographystyle{ieeetr}
+\bibliography{bibliografia}
+
 \end{document}

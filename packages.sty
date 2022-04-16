@@ -247,3 +247,19 @@ bindingoffset=15mm,marginpar=1.5cm,reversemp]{geometry}
 \usepackage{subfig} % pi� recente e dello stesso autore ma non va con le tabelle!
 % Va sempre posto alla fine del preambolo
 % serve per poter mettere pi� immagini appaiate
+
+%
+% TODO
+%
+% Comments and todos
+\usepackage[colorinlistoftodos]{todonotes}
+
+\newcommand{\topar}[1]{\todo[inline, color=gray!30]{\textbf{Paragraph.} #1}} % Use \topar to explain the content of the next paragraph
+
+\newcommand{\tofigure}[1]{\todo[inline, color=blue!30]{\textbf{Figure.} #1}}
+
+\newcommand{\totable}[1]{\todo[inline, color=green!30]{\textbf{Table.} #1}}
+
+\newcommand{\tobox}[1]{\todo[inline, color=yellow!30]{\textbf{Box.} #1}}
+
+\newcommand{\toreframing}[1]{\todo[inline, color=pink!30]{\textbf{Reframing.} #1}}

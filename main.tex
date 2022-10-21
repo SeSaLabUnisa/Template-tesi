@@ -1,0 +1,109 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Cerca la parola TODO all'interno di questo file per individuare ciò che devi personalizzare.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%
+
+
+% Comandi per generare PDF-A2 con i relativi metadati 
+\begin{filecontents*}[overwrite]{\jobname.xmpdata}
+\Title{TODO Titolo del documento PDF}
+\Author{TODO Nome autore}
+\Language{it}
+\Subject{TODO Breve frase descrittiva}
+\Keywords{TODO\sep keyword2\sep keyword3}
+\end{filecontents*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   PREAMBOLO DEL DOCUMENTO     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,12pt,oneside,top=3cm,bottom=3cm,left=3.5cm,right=3.5cm,openright,reqno,table]{book}
+% openany - fa iniziare i capitoli direttamente nella pagina successiva
+% openright - fa iniziare i capitoli nella prima pagina destra disponibile 
+% fleqn  - allinea le formule a sinistra anzichè centrarle
+% leqno - dispone la numerazione delle formule sulla sinistra o destra
+% reqno - dispone la numerazione delle formule sulla destra
+
+% package fondamentali
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+% se si realizza un documento in piu lingue bisogna istruire babel con
+% [lingua_secondaria,lingua_principale]
+\usepackage[italian]{babel}
+\usepackage{colorprofiles}
+\usepackage[colorlinks,hyperindex,pagebackref]{hyperref}
+\hypersetup{
+			citecolor=black,
+			filecolor=black,
+			linkcolor=black,
+			urlcolor=black
+}
+% per generare il PDF-A2
+\usepackage[a-2b,mathxmp]{pdfx}[2018/12/22]
+\hypersetup{pdfstartview=}
+
+% tutti i package sono specificati in un file a parte: packages.sty
+\usepackage{packages}
+
+% comandi personalizzati
+\usepackage{utils}
+
+% stile dei capitoli
+\usepackage[SeSa]{fncychap}
+% gli stili di capitolo disponibili sono i seguenti:
+% SeSa, Sonny, Lenny, Rejne, Conny, PetersLenny, Bjornstrup, Glenn, Bjarne, Nicola
+
+\linespread{1.5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   DOCUMENTO VERO E PROPRIO    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% frontespizio 
+\include{covermatter/frontespizio}
+
+% sesalab
+\include{covermatter/sesa}
+
+%dedica
+\include{covermatter/dedica}
+
+% abstract
+\renewcommand{\abstractname}{Abstract}
+\include{capitoli/abstract}
+
+\frontmatter
+% quello che segue è in numerazione romana e i capitoli non verranno numerati
+% se non si vuole che compaia il numero di pagina basta usare il comando:
+%\nonumber
+
+% indici 
+\include{covermatter/indici}
+
+\mainmatter
+% quello che segue sarà in numerazione araba e i capitoli verranno numerati
+
+% TODO inserire capitoli
+\include{capitoli/introduzione}
+\include{capitoli/esempio}
+\include{capitoli/conclusioni}
+
+\backmatter
+
+% bibliografia in stile IEEE
+\addcontentsline{toc}{chapter}{\bibname}
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+% ringraziamenti
+\include{covermatter/ringraziamenti}
+
+% se hai intenzione di donare un albero tramite treedom
+%\include{covermatter/treedom}
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

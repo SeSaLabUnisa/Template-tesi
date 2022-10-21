@@ -1,0 +1,114 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Goal & RQ box
+
+% usage: \goal{Descrizione dell'biettivo della tesi.}
+\newcommand{\goal}[1]{ %
+	\vspace{5pt} %
+	\noindent\fcolorbox{black}{blue!05}{%
+		\parbox{0.985\linewidth}{% 
+			\textbf{\faBullseye\ Our Goal.} #1 %
+		}%
+	}%
+	\vspace{5pt} %
+}%
+
+% usage: \rqbox{Numero della Research Question}{Domanda}
+\newcommand{\rqbox}[2]{%
+	\medskip%
+	\noindent\fcolorbox{black}{blue!05}{%
+		\parbox{0.985\linewidth}{% 
+			\textbf{\faSearch\ RQ$_{#1}$.} \emph{#2} %
+		}%
+	}%
+	\medskip%
+}%
+
+% usage: \rqanswer{Numero della Research Question}{Risposta}
+\newcommand{\rqanswer}[2]{%
+	\medskip%
+	\noindent\fcolorbox{black}{blue!05}{%
+		\parbox{0.985\linewidth}{% 
+			\textbf{\faHandORight\ Answer to RQ$_{#1}$.} #2%
+		}%
+	}%
+	\medskip%
+}%
+
+% usage: \finding{Numero del finding}{Testo}
+\newcommand{\finding}[2]{ %
+	\medskip%
+	\noindent\fcolorbox{black}{blue!05}{%
+		\parbox{0.985\linewidth}{% 
+			\textbf{\faKey\ Finding #1.} #2 %
+		}%
+	}%
+	\medskip%
+}%
+
+% usage: \finding{Numero del takeaway message}{Testo}
+\newcommand{\takeaway}[2]{ %
+	\medskip%
+	\noindent\fcolorbox{black}{blue!05}{%
+		\parbox{0.985\linewidth}{% 
+			\textbf{\faComment\ Take-away Message \##1.} #2 %
+		}%
+	}%
+	\medskip%
+}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Commenti personalizzati
+
+% usage: \notabene{sigla}{Testo}{colore}
+\newcommand{\notabene}[3]{
+	\fbox{\bfseries\sffamily\scriptsize\color{#3}#1}
+	{\sf\small$\blacktriangleright${\color{#3}\textit{\textbf{#2}}}$\blacktriangleleft$}
+}
+
+
+\newcommand{\nb}[1]{\notabene{NB}{#1}{red}}
+
+\newcommand{\needcite}{\textcolor{red}{Citazione necessaria}}
+
+\newcommand{\revised}[1]{\textcolor{blue}{#1}}
+
+\newcommand{\feedback}[1]{\textcolor{red}{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Colori
+
+\usepackage{color}
+\definecolor{gray75}{gray}{.25}
+\definecolor{gray70}{gray}{.3}
+\definecolor{gray60}{gray}{.4}
+\definecolor{gray50}{gray}{.5}
+\definecolor{gray40}{gray}{.6}
+\definecolor{gray30}{gray}{.7}
+\definecolor{gray20}{gray}{.8}
+\definecolor{gray15}{gray}{.85}
+\definecolor{gray10}{gray}{.9}
+\definecolor{gray05}{gray}{.95}
+
+\definecolor{graytable}{gray}{.9}
+
+\usepackage{xcolor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Tabelle
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{colortbl}
+
+\usepackage{array}
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\renewcommand{\arraystretch}{1.15} % change table cell vertical padding
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

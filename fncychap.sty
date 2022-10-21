@@ -167,6 +167,33 @@
     \vskip 40\p@
     }
 
+%%%%%% SESA DEF
+
+\DeclareOption{SeSa}{%
+  \ChNameVar{\Large}
+  \ChNumVar{\Huge}
+  \ChTitleVar{\Large\bf}
+  \ChRuleWidth{0.5pt}
+  \ChNameUpperCase
+  \renewcommand{\DOCH}{%
+    \raggedleft
+    \CNV\FmN{\@chapapp}\space \CNoV\thechapter
+    \par\nobreak
+    \vskip 40\p@}
+  \renewcommand{\DOTI}[1]{%
+    \CTV\raggedleft\mghrulefill{\RW}\par\nobreak
+    \vskip 5\p@
+    \CTV\FmTi{#1}\par\nobreak
+    \mghrulefill{\RW}\par\nobreak
+    \vskip 40\p@}
+  \renewcommand{\DOTIS}[1]{%
+    \CTV\raggedleft\mghrulefill{\RW}\par\nobreak
+    \vskip 5\p@
+    \CTV\FmTi{#1}\par\nobreak
+    \mghrulefill{\RW}\par\nobreak
+    \vskip 40\p@}
+}
+
 %%%%%% SONNY DEF
 
 \DeclareOption{Sonny}{%

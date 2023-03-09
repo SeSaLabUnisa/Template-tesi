@@ -1,6 +1,6 @@
 Questo template è fornito dal [SeSa Lab](https://sesalabunisa.github.io/).
 
-Per favore, leggi attentamente questo file prima di iniziare a lavorare alla tua tesi!
+**Per favore, leggi attentamente questo file prima di iniziare a lavorare alla tua tesi!**
 
 ## Indicazioni Generali
 
@@ -33,6 +33,8 @@ Consigliamo di inserire le figure in una cartella a parte, per evitare che il co
 Nel file references.bib vanno inseriti i riferimenti in formato BibTex.
 
 Suggeriamo [questa guida](https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex) sulle bibliografie in LaTeX.
+
+Attenzione: il template è già impostato per riportare i riferimenti nel formato IEEE. Invitiamo a modificare SOLO il file references.bib inserendo gli articoli che si vogliono citare.
 
 ## Comandi Utili
 

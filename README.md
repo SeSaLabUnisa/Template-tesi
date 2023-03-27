@@ -51,3 +51,18 @@ Visitando [questo link](https://www.treedom.net/it/user/sesalab/event/sesa-rando
 ## Template Slide
 
 Nella cartella presentazione forniamo un template utile per preparare le slide della presentazione finale della tesi.
+
+
+## Alcuni consigli utili
+
+1. Ogni immagine/tabella deve avere le seguenti caratteristiche:
+* Una caption;
+* Deve essere esplicitamente commentata all'interno del testo (ricordatevi che se vi riferite alla figura/tabella inserendo anche il corrispettivo numero e.g., Figura X mostra che... allora la prima lettera deve essere scritta in maiuscolo; E ricordatevi che latex mette a disposizione un comando per citare correttamente (ref) senza dover mettere a mano il numeretto corrispondente);
+* Le immagini devono essere rifatte tramite PPT o similari e salvate in pdf prima di inserirle nel file latex, altrimenti rischiate di inserire immagini sgranate.
+2. Ricordatevi sempre di citare le fonti e di rifrasare, altrimenti rischiate di inccorrere nel reato di plagio (che può comportare anche la revoca del titolo accademico) e che citare non sminuisce il vostro lavoro, anzi, lo rafforza.
+3. L'Abstract deve necessariamente contenere le seuguenti informazioni:
+* Un breve riasssunto della problematica;
+* Una breve descrizione di ciò che è stato fatto;
+* I risultati ottenuti
+
+

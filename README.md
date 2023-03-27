@@ -63,6 +63,6 @@ Nella cartella presentazione forniamo un template utile per preparare le slide d
 3. L'Abstract deve necessariamente contenere le seuguenti informazioni:
 * Un breve riasssunto della problematica;
 * Una breve descrizione di ciò che è stato fatto;
-* I risultati ottenuti
+* I risultati ottenuti.
 
 
